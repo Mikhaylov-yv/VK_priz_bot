@@ -2,12 +2,12 @@ import vk_api
 import random
 from datetime import date, datetime, time
 
-whiteWordPart = (
+whiteWordPart = [
 	'лайк',
 	'репост',
 	'поделится',
 	'поделиться',
-	)
+	]
 
 blackWordPart = (
 	'порно',
@@ -76,4 +76,4 @@ vinePosts = (
 # Вступить в группу
 # results.groups.join
 
-time.sleep(120.0+random.random()*200.0)
+#time.sleep(120.0+random.random()*200.0)
