@@ -10,6 +10,7 @@ vkapi = vk.API(session)
 api = vk.API(session, v=v)
 count = 200
 posts = []
+id_posts_data =[]
 stop = False
 
 
@@ -30,7 +31,8 @@ while stop == False:
                 i1=0
                 i1_max = len(blackWordPart)
                 while i1 < i1_max  and blackWordPart[i1] not in text:
-                    if id_posts not in posts:
+                    if id_posts not in id_posts_data:
+                        id_posts_data.append(id_posts)
                         posts.append(mass)
                     i1=i1+1
                 i=i+1
