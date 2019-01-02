@@ -20,9 +20,11 @@ while stop == False:
             if whiteWord  in post['text']:
                 id_posts = post['from_id']
                 group_id = post['id']
+                text = post['text']
                 mass = {}
                 mass['id_posts'] = id_posts
                 mass['group_id'] = group_id
+                mass['text'] = text
                 posts.append(mass)
     print(posts)
     # for post in posts:
