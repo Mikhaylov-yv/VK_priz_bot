@@ -9,14 +9,14 @@ whiteWordPart = [
 	'поделиться',
 	]
 
-blackWordPart = (
+blackWordPart = [
 	'порно',
 	'знакомств',
 	'sex',
 	'казино',
 	'вечеринк',
 	'кастинг',
-	)
+	]
 
 noInterecting = (
 	'дрипк',
