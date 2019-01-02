@@ -1,5 +1,5 @@
 import vk_api
-from reg_data import MyVKData
+from my_data import MyVKData
 from config import whiteWordPart
 import time
 def main():
