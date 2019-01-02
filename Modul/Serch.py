@@ -13,7 +13,7 @@ def main():
 
 
     with vk_api.VkRequestsPool(vk_session) as pool:
-        groups = []
+        posts = []
 
 
         #for word in whiteWordPart:
@@ -22,14 +22,18 @@ def main():
             #'q': word
             'q':'лайк'
         })
-        a = finded_groups.result['items']
-        for group in finded_groups.result['items']:
-            group_id = group['id']
-            group_name = group['name']
-            groups.append([group_id, group_name])
+
+        for post in newsfeed.items:
+            id_posts = post['id_posts']
+            group_id = post['group_id']
+            mass = {}
+            mass['id_posts'] = id_posts
+            mass['group_id'] = group_id
+            posts.append(mass)
 
 
-
+for post in posts:
+    vkapi.wall.repost(post['id_posts'])
 
 
     print(groups)
