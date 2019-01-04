@@ -4,7 +4,6 @@ from config import whiteWordPart
 from config import blackWordPart
 import time
 
-global v
 v=5.92
 session = vk.AuthSession(app_id=MyVKData.MY_PRIL_ID, user_login=MyVKData.LOGIN, user_password=MyVKData.GET_PASSWORD, scope='wall, fields, messages, groups')
 vkapi = vk.API(session)
