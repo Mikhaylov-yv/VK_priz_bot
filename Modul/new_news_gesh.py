@@ -1,15 +1,13 @@
-# coding=UTF-8
-import vk_api
 import vk
+import vk_api
 import requests
 from my_data import MyVKData
 import websocket
 import random
 import json
 import time
-import re
 
-chat_id = 79
+chat_id = 1
 peer_id = 2000000000  + chat_id
 v=5.92
 session = vk.AuthSession(app_id=MyVKData.MY_PRIL_ID, user_login=MyVKData.LOGIN, user_password=MyVKData.GET_PASSWORD, scope='messages')
@@ -45,19 +43,9 @@ def listen_stream():
     ws.on_open = on_open
     ws.run_forever()
 
-def analiz (message):
-    text = str(message["event"]['text'])
-    reg = re.compile('[^а-яА-я ]')
-    text = reg.sub(' ', str(text))
-    text = re.sub(" +", " ", text)
-    text = text.lower()
-    print(text)
-
-
 def on_message(ws, message):
     print(">>>> receive message:", message)
     message = eval(message)
-    analiz(message)
     if message["event"]['event_type'] == 'post':
         post = 'wall' + str(message["event"]['author']['id']) + '_' + str(message["event"]['event_id']['post_id'])
         random_id = random.randint(0, 9999)
@@ -99,9 +87,9 @@ def del_my_rules(tag):
     return data['code'] == 200
 
 stream = get_streaming_server_key(MyVKData.TOKEN)
-# clear_rules_list()
-# serch_key = ['розыгрыш', 'конкурс', 'репост', 'выйграть', 'бесплатно']
-# for key in serch_key:
-#     set_my_rules(key)
+clear_rules_list()
+set_my_rules("розыгрыш")
 print(get_rules_list())
 listen_stream()
+
+
