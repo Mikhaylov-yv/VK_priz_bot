@@ -46,8 +46,6 @@ def append_in_histori(post):
     file.write('post_history = ' + str(post_history))
     file.close()
 
-
-
 v = 5.92
 session = vk.AuthSession(app_id=MyVKData_O.MY_PRIL_ID, user_login=MyVKData_O.LOGIN,
                          user_password=MyVKData_O.GET_PASSWORD, scope='wall, fields, messages, groups')
