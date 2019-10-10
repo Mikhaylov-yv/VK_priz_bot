@@ -8,6 +8,8 @@ whiteWordPart = [
 	'поделиться',
 	]
 
+whiteWordPart2 = ['пицца', 'бургер', 'бургеры', 'гамбургер', 'пиццы']
+
 blackWordPart = [
 	'грн',
 	'порно',
@@ -65,7 +67,6 @@ vinePosts = [
 	'часов до завершения конкурс',
 	'итоги'
 	]
-
 
 # results = pool.method('newsfeed', {'q':u'Конкурс репост подарки Сочи'})
 # results = pool.method('newsfeed', {'q':u'Конкурс репост подарки Россия'})
